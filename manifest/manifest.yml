@@ -1,0 +1,15 @@
+---
+applications:
+- name: cof-activiti-admin
+  memory: 1G
+  timeout: 300
+  instances: 1
+  host: cof-activiti-admin
+  domains:
+  - clgxlabs.net
+  path: ../target/activiti-admin.war
+  buildpack: java_buildpack_offline
+  services:
+  - cops-activiti-admin-mysql
+  env:
+    JBP_CONFIG_TOMCAT: '[tomcat: {context_path: "/activiti-admin"}]'
